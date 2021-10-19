@@ -1,19 +1,14 @@
+import 'package:desafioma9/app/modules/splash/splash_screen.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:flutter/material.dart';
-import 'package:desafioma9/app/app_widget.dart';
 import 'package:desafioma9/app/modules/home/home_module.dart';
 
-class AppModule extends MainModule {
+class AppModule extends Module {
   @override
   List<Bind> get binds => [];
 
   @override
-  List<ModularRouter> get routers => [
-        ModularRouter(Modular.initialRoute, module: HomeModule()),
+  List<ModularRoute> get routes => [
+        ChildRoute('/', child: (_, args) => SplashScreen()),
+        ModuleRoute('/home', module: HomeModule()),
       ];
-
-  @override
-  Widget get bootstrap => AppWidget();
-
-  static Inject get to => Inject<AppModule>.of();
 }

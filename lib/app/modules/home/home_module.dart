@@ -10,20 +10,18 @@ import 'package:flutter_modular/flutter_modular.dart';
 
 import 'presenter/home_page.dart';
 
-class HomeModule extends ChildModule {
+class HomeModule extends Module {
   @override
   List<Bind> get binds => [
         $HomeController,
-        Bind((i) =>  GetListMoviesUseCaseImpl(i.get())),
+        Bind((i) => GetListMoviesUseCaseImpl(i.get())),
         Bind((i) => GetListMoviesRepositoryImpl(i.get())),
         Bind((i) => GetListMoviesDataSourceStandart(i.get())),
         Bind((i) => ClientDioApi(Dio(), ApiConstants.BASE_URL)),
       ];
 
   @override
-  List<ModularRouter> get routers => [
-        ModularRouter(Modular.initialRoute, child: (_, args) => HomePage()),
+  List<ModularRoute> get routers => [
+        ChildRoute('/', child: (_, args) => HomePage()),
       ];
-
-  static Inject get to => Inject<HomeModule>.of();
 }

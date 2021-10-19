@@ -1,11 +1,9 @@
-import 'package:flutter_modular/flutter_modular_test.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import 'package:desafioma9/app/app_controller.dart';
 import 'package:desafioma9/app/app_module.dart';
 
 void main() {
-  initModule(AppModule());
   // AppController app;
   //
   setUp(() {

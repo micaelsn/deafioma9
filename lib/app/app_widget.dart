@@ -6,13 +6,13 @@ class AppWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      navigatorKey: Modular.navigatorKey,
-      title: 'Ma9 desafio',
+      // navigatorKey: Modular.navigatorKey,
+      title: 'Movies List',
       theme: ThemeData(
         primarySwatch: Colors.purple,
       ),
       initialRoute: '/',
-      onGenerateRoute: Modular.generateRoute,
-    );
+      // onGenerateRoute: Modular.generateRoute,
+    ).modular();
   }
 }

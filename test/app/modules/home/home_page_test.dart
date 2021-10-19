@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:flutter_modular/flutter_modular_test.dart';
 
 import 'package:desafioma9/app/modules/home/presenter/home_page.dart';
 
